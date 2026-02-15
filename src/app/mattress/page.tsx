@@ -9,13 +9,13 @@ export default function MattressPage() {
       <Header />
 
       {/* Hero Section */}
-      <div className="bg-white px-20 py-16">
+      <div className="bg-white px-4 md:px-8 xl:px-20 py-8 md:py-16">
         <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-col gap-4">
-            <h1 className="font-[family-name:var(--font-poppins)] font-semibold text-5xl text-black">
+            <h1 className="font-[family-name:var(--font-poppins)] font-semibold text-3xl md:text-4xl xl:text-5xl text-black">
               Our <span className="text-[#253f94]">Mattress</span> Collection
             </h1>
-            <p className="font-[family-name:var(--font-poppins)] text-lg text-[#494949] max-w-[800px]">
+            <p className="font-[family-name:var(--font-poppins)] text-base md:text-lg text-[#494949] max-w-[800px]">
               Discover the perfect mattress for your sleep needs. From plush comfort to firm support, we have the ideal solution for everyone.
             </p>
           </div>
@@ -23,14 +23,14 @@ export default function MattressPage() {
       </div>
 
       {/* Filters Section */}
-      <div className="px-20 py-8">
+      <div className="px-4 md:px-8 xl:px-20 py-6 md:py-8">
         <div className="max-w-[1440px] mx-auto">
-          <div className="flex items-center justify-between">
-            <p className="font-[family-name:var(--font-poppins)] text-base text-[#494949]">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <p className="font-[family-name:var(--font-poppins)] text-sm md:text-base text-[#494949]">
               Showing <span className="font-semibold text-black">{productsData.length}</span> products
             </p>
-            <div className="flex gap-4">
-              <select className="border border-[#d1d1d1] rounded-lg px-4 py-2 font-[family-name:var(--font-poppins)] text-base text-black bg-white hover:border-[#253f94] transition-colors cursor-pointer">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <select className="border border-[#d1d1d1] rounded-lg px-4 py-2 font-[family-name:var(--font-poppins)] text-sm md:text-base text-black bg-white hover:border-[#253f94] transition-colors cursor-pointer">
                 <option>Sort by: Popular</option>
                 <option>Price: Low to High</option>
                 <option>Price: High to Low</option>
@@ -49,13 +49,13 @@ export default function MattressPage() {
       </div>
 
       {/* Products Grid */}
-      <div className="px-20 pb-24">
+      <div className="px-4 md:px-8 xl:px-20 pb-12 md:pb-24">
         <div className="max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {productsData.map((product) => (
               <Link key={product.id} href={`/product/${product.id}`}>
                 <div className="bg-white rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-shadow">
-                  <div className="relative h-[280px]">
+                  <div className="relative h-[220px] md:h-[260px] xl:h-[280px]">
                     <img
                       src={product.images[0]}
                       alt={product.title}
@@ -63,18 +63,18 @@ export default function MattressPage() {
                     />
                     {/* Discount Badge */}
                     <div className="absolute top-4 right-4 bg-[#253f94] rounded-full px-3 py-1">
-                      <p className="font-[family-name:var(--font-poppins)] text-sm text-white font-semibold">
+                      <p className="font-[family-name:var(--font-poppins)] text-xs md:text-sm text-white font-semibold">
                         -30%
                       </p>
                     </div>
                   </div>
-                  <div className="p-6">
+                  <div className="p-4 md:p-6">
                     <div className="flex justify-between items-start gap-4">
                       <div className="flex-1">
-                        <p className="font-[family-name:var(--font-inter)] text-base text-black capitalize mb-2 line-clamp-2">
+                        <p className="font-[family-name:var(--font-inter)] text-sm md:text-base text-black capitalize mb-2 line-clamp-2">
                           {product.title}
                         </p>
-                        <p className="font-[family-name:var(--font-inter)] font-semibold text-2xl text-black">
+                        <p className="font-[family-name:var(--font-inter)] font-semibold text-xl md:text-2xl text-black">
                           £{product.price}
                         </p>
                         <div className="flex gap-1 mt-2">
